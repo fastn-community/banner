@@ -7,7 +7,9 @@ show-banner: true
 
 -- ft.page.banner:
 
--- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
+-- banner: 
+
+⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- end: ft.page.banner
 
@@ -20,7 +22,7 @@ name: fifthtry.github.io/banner
 Banners are an important element of website design and can be used to enhance 
 the user experience, increase engagement, and drive conversions.
 
-🌟 Ex.g. Check top of this page.
+🌟 Ex.g. Look at the top of this page.
 
 A banner is typically a horizontal bar that appears at the very top of a webpage, 
 often referred to as a "top banner" or "header banner". 
@@ -50,11 +52,14 @@ files:
 
 -- cb.rendered.input:
 
-\-- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
+\-- banner.banner: 
+⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- cb.rendered.output:
 
--- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
+-- banner: 
+
+⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- end: cb.rendered.output
 
@@ -72,13 +77,13 @@ files:
 
 
 
--- component simple-banner:
-caption title:
+-- component banner:
+body body:
 boolean $hide: false
 boolean $mousein: false
 
 -- ftd.column:
-if: { !$simple-banner.hide }
+if: { !$banner.hide }
 width: fill-container
 padding.px: 10
 padding-horizontal.px if { $ftd.device == "mobile"}: 48
@@ -93,15 +98,17 @@ max-width.fixed.px: 1024
 spacing.fixed.px: 32
 align-self: center
 
--- ftd.text: $simple-banner.title
+-- ftd.text: 
 if: {  $ftd.device != "mobile" }
+text: $banner.body
 role: $inherited.types.button-medium
 color: $inherited.colors.cta-primary.base
 text-align: center
 align-self: center
 
--- ftd.text: $simple-banner.title
+-- ftd.text: 
 if: {  $ftd.device == "mobile" }
+text: $banner.body
 role: $inherited.types.copy-regular
 color: $inherited.colors.cta-primary.base
 text-align: center
@@ -125,13 +132,13 @@ margin-top.px if { $ftd.device == "mobile"}: -12
 src: $assets.files.static.cross.svg.dark
 width.fixed.px: 24
 height.fixed.px: 24
-$on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
+$on-click$: $ftd.set-bool($a = $banner.hide, v = true)
 
 -- end: ftd.column
 
 -- end: ftd.column
 
--- end: simple-banner
+-- end: banner
 
 
 
@@ -143,7 +150,7 @@ $on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
 
 
 -- component cta-banner:
-caption title:
+body body:
 string cta-text: 
 string cta-link: 
 boolean $hide: false
@@ -166,16 +173,9 @@ if: {  $ftd.device != "mobile" }
 spacing.fixed.px: 10
 align-self: center
 
--- ftd.text: $cta-banner.title
-if: {  $ftd.device != "mobile" }
+-- ftd.text:
+text: $cta-banner.body
 role: $inherited.types.button-medium
-color: $inherited.colors.info.base.dark
-text-align: center
-align-self: center
-
--- ftd.text: $cta-banner.title
-if: {  $ftd.device == "mobile" }
-role: $inherited.types.copy-regular
 color: $inherited.colors.info.base.dark
 text-align: center
 align-self: center
@@ -199,7 +199,8 @@ if: {  $ftd.device == "mobile" }
 spacing.fixed.px: 10
 align-self: center
 
--- ftd.text: $cta-banner.title
+-- ftd.text: 
+text: $cta-banner.body
 role: $inherited.types.copy-regular
 color: $inherited.colors.info.base.dark
 text-align: center
