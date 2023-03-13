@@ -2,8 +2,11 @@
 
 -- fastn.package: fifthtry.github.io/banner
 
--- fastn.dependency: fifthtry.github.io/doc-site as ds
--- fastn.dependency: fifthtry.github.io/bling as bling
+-- fastn.dependency: fifthtry.github.io/package-doc
 
--- fastn.auto-import: bling/chat as chat
--- fastn.auto-import: ds
+
+-- fastn.auto-import: fifthtry.github.io/package-doc as pd
+-- fastn.auto-import: fastn
+-- fastn.auto-import: fifthtry.github.io/package-doc/typography as tf
+-- fastn.auto-import: fifthtry.github.io/package-doc/code-block as cb
+-- fastn.auto-import: fifthtry.github.io/package-doc/forest-theme as ft

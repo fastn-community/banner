@@ -1,51 +1,134 @@
 -- import: fifthtry.github.io/banner/assets
+-- import: fifthtry.github.io/package-doc/doc as pd
+
+
+-- ft.page:
+show-banner: true
+
+-- ft.page.banner:
+
+-- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+cta-text: Know more
+cta-link: index.html
+
+-- end: ft.page.banner
+
+
+-- ft.page.body:
+
+-- pd.package: Banner components
+name: fifthtry.github.io/banner
+
+Banners are an important element of website design and can be used to enhance 
+the user experience, increase engagement, and drive conversions.
+
+🌟 Ex.g. Check top of this page.
+
+A banner is typically a horizontal bar that appears at the very top of a webpage, 
+often referred to as a "top banner" or "header banner". 
+
+It usually contains important information or calls to action that are designed 
+to catch the user's attention and encourage them to take action.
+
+`fifthtry.github.io/banner` library contains various `banner` components that  
+can be used on your pages for showing notifications or info. 
+
+
+To use banner on your `FTD` web pages, add below `fastn` dependency into `FASTN.ftd` file:
+
+-- ft.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/banner
+\-- fastn.auto-import: fifthtry.github.io/banner
+
+
+-- tf.markdown:
+
+Once you add above lines into your `fastn` package, add `banner` into your `.ftd` 
+files:
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+cta-text: Know more
+cta-link: index.html
+
+-- cb.rendered.output:
+
+-- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+cta-text: Know more
+cta-link: index.html
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page
 
 
 
--- ds.page: Welcome to your [FASTN site](https://fastn.dev/)
+
+
+
+
+
+
+
+
+-- component simple-banner:
+caption title:
+optional string cta-text: 
+optional string cta-link: 
+boolean $hide: false
 
 -- ftd.column:
+if: { !$simple-banner.hide }
+width: fill-container
+padding.px: 10
+padding-horizontal.px if { $ftd.device == "mobile"}: 48
+background.solid: $inherited.colors.background.step-2
+align-content: center
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1024
+
+-- ftd.row:
+spacing.fixed.px: 32
 align-self: center
 
--- chat.message-left: Yo! I am Amit Upadhyay, CEO of FifthTry, welcome to the new world of FTD.
+-- ftd.text: $simple-banner.title
+role: $inherited.types.fine-print
+color: $inherited.colors.text
 
--- ds.markdown: 
+-- ftd.text: $simple-banner.cta-text
+role: $inherited.types.button-small
+color: $inherited.colors.text
+link: $simple-banner.cta-link
+white-space: nowrap
 
-You reached the right place, and from here let me assure you, your FTD journey is going superfast. 🙂
-
--- end: chat.message-left
-
--- chat.message-right:  😊 Liking this chat component?
-
--- ds.markdown:
-
-[Click here to learn more](https://fifthtry.github.io/bling/chat/)
-👍
-
--- end: chat.message-right
+-- end: ftd.row
 
 -- end: ftd.column
 
--- ds.h1: How to use?
+-- ftd.column:
+anchor: parent
+right.px: 24
+right.px if { $ftd.device == "mobile"}: 12
+top.px: 10
+z-index: 9999
 
-It's very simple like making a sandwich. Create new `.ftd` file and just say:
+-- ftd.image:
+src: $assets.files.static.cross.svg
+width.fixed.px: 24
+height.fixed.px: 24
+$on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
 
--- ds.code: `-- ds.page` 
-lang: ftd
+-- end: ftd.column
 
-\-- ds.page: Your page title goes here
+-- end: ftd.column
 
-Your page content goes here.
-
-
--- ds.h1: Need sidebar at right side of page?
-
-Here it is, [use this document](https://fifthtry.github.io/doc-site/docs/right-sidebar/).
-
-
--- ds.h1: 👀 Learn FTD and become a pro?
-
-You are one click away, just check [our documentation](https://fastn.dev/) and 
-dont forget to jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
-
--- end: ds.page
+-- end: simple-banner
