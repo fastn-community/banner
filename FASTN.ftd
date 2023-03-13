@@ -10,3 +10,13 @@
 -- fastn.auto-import: fifthtry.github.io/package-doc/typography as tf
 -- fastn.auto-import: fifthtry.github.io/package-doc/code-block as cb
 -- fastn.auto-import: fifthtry.github.io/package-doc/forest-theme as ft
+
+
+
+
+-- fastn.sitemap:
+
+
+# Home: index.html
+
+- Simple Banner: index.html
