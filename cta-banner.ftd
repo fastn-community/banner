@@ -8,9 +8,11 @@ show-banner: true
 
 -- ft.page.banner: 
 
--- banner.cta-banner: 🚀 Checkout our latest blog post
+-- banner.cta-banner: 
 cta-text: Ahoy, Web Components!
 cta-link: https://fastn.io/blog/web-components/
+
+🚀 Checkout our latest blog post
 
 -- end: ft.page.banner
 
@@ -25,7 +27,7 @@ additional(optional) parameters.
 Use our `cta-banner` on your fast web projects where you would like to add click
 to action for your web page users.
 
-🌟 Ex.g. Check top of this page.
+🌟 Ex.g. Look at the top of this page.
 
 
 To use cta-banner on your `FTD` web pages, add below `fastn` dependency into `FASTN.ftd` file:
@@ -46,15 +48,19 @@ files:
 
 -- cb.rendered.input:
 
-\-- banner.cta-banner: 🚀 Checkout our latest blog post
+\-- banner.cta-banner: 
 cta-text: Ahoy, Web Components!
 cta-link: https://fastn.io/blog/web-components/
+
+🚀 Checkout our latest blog post
 
 -- cb.rendered.output:
 
--- banner.cta-banner: 🚀 Checkout our latest blog post
+-- banner.cta-banner: 
 cta-text: Ahoy, Web Components!
 cta-link: https://fastn.io/blog/web-components/
+
+🚀 Checkout our latest blog post
 
 -- end: cb.rendered.output
 
