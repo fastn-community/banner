@@ -82,7 +82,7 @@ if: { !$simple-banner.hide }
 width: fill-container
 padding.px: 10
 padding-horizontal.px if { $ftd.device == "mobile"}: 48
-background.solid: $inherited.colors.info.base.light
+background.solid: $inherited.colors.background.code
 align-content: center
 
 -- ftd.column:
@@ -96,14 +96,14 @@ align-self: center
 -- ftd.text: $simple-banner.title
 if: {  $ftd.device != "mobile" }
 role: $inherited.types.button-medium
-color: $inherited.colors.custom.ten
+color: $inherited.colors.cta-primary.base
 text-align: center
 align-self: center
 
 -- ftd.text: $simple-banner.title
 if: {  $ftd.device == "mobile" }
 role: $inherited.types.copy-regular
-color: $inherited.colors.custom.ten
+color: $inherited.colors.cta-primary.base
 text-align: center
 align-self: center
 
@@ -122,7 +122,7 @@ align-self: center
 margin-top.px if { $ftd.device == "mobile"}: -12
 
 -- ftd.image:
-src: $assets.files.static.cross.svg.light
+src: $assets.files.static.cross.svg.dark
 width.fixed.px: 24
 height.fixed.px: 24
 $on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
@@ -162,11 +162,20 @@ width: fill-container
 max-width.fixed.px: 1024
 
 -- ftd.row:
+if: {  $ftd.device != "mobile" }
 spacing.fixed.px: 10
 align-self: center
 
 -- ftd.text: $cta-banner.title
+if: {  $ftd.device != "mobile" }
 role: $inherited.types.button-medium
+color: $inherited.colors.info.base.dark
+text-align: center
+align-self: center
+
+-- ftd.text: $cta-banner.title
+if: {  $ftd.device == "mobile" }
+role: $inherited.types.copy-regular
 color: $inherited.colors.info.base.dark
 text-align: center
 align-self: center
@@ -184,6 +193,31 @@ $on-mouse-leave$: $ftd.set-bool($a = $cta-banner.mousein, v = false)
 align-self: center
 
 -- end: ftd.row
+
+-- ftd.column:
+if: {  $ftd.device == "mobile" }
+spacing.fixed.px: 10
+align-self: center
+
+-- ftd.text: $cta-banner.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.base.dark
+text-align: center
+align-self: center
+
+-- ftd.text: $cta-banner.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.info.base.dark
+color if { $cta-banner.mousein }: $inherited.colors.info.base.dark
+border-bottom-width.px: 1
+border-color if { $cta-banner.mousein }: $inherited.colors.custom.three
+link: $cta-banner.cta-link
+white-space: nowrap
+$on-mouse-enter$: $ftd.set-bool($a = $cta-banner.mousein, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $cta-banner.mousein, v = false)
+align-self: center
+
+-- end: ftd.column
 
 -- end: ftd.column
 
