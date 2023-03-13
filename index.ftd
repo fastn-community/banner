@@ -7,9 +7,7 @@ show-banner: true
 
 -- ft.page.banner:
 
--- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-cta-text: Know more
-cta-link: index.html
+-- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- end: ft.page.banner
 
@@ -52,15 +50,11 @@ files:
 
 -- cb.rendered.input:
 
-\-- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-cta-text: Know more
-cta-link: index.html
+\-- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- cb.rendered.output:
 
--- simple-banner: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-cta-text: Know more
-cta-link: index.html
+-- simple-banner: ⭐️  If you like fastn, give it a star on [GitHub](https://github.com/fastn-stack/fastn/) and follow us on [Twitter](https://twitter.com/FifthTryHQ)
 
 -- end: cb.rendered.output
 
@@ -80,8 +74,6 @@ cta-link: index.html
 
 -- component simple-banner:
 caption title:
-optional string cta-text: 
-optional string cta-link: 
 boolean $hide: false
 boolean $mousein: false
 
@@ -90,7 +82,7 @@ if: { !$simple-banner.hide }
 width: fill-container
 padding.px: 10
 padding-horizontal.px if { $ftd.device == "mobile"}: 48
-background.solid: $inherited.colors.background.step-2
+background.solid: $inherited.colors.info.base.light
 align-content: center
 
 -- ftd.column:
@@ -102,19 +94,18 @@ spacing.fixed.px: 32
 align-self: center
 
 -- ftd.text: $simple-banner.title
-role: $inherited.types.fine-print
-color: $inherited.colors.text
+if: {  $ftd.device != "mobile" }
+role: $inherited.types.button-medium
+color: $inherited.colors.custom.ten
+text-align: center
+align-self: center
 
--- ftd.text: $simple-banner.cta-text
-role: $inherited.types.button-small
-color: $inherited.colors.text
-color if { $simple-banner.mousein }: $inherited.colors.cta-primary.base
-border-bottom-width.px: 1
-border-color if { $simple-banner.mousein }: $inherited.colors.cta-primary.base
-link: $simple-banner.cta-link
-white-space: nowrap
-$on-mouse-enter$: $ftd.set-bool($a = $simple-banner.mousein, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $simple-banner.mousein, v = false)
+-- ftd.text: $simple-banner.title
+if: {  $ftd.device == "mobile" }
+role: $inherited.types.copy-regular
+color: $inherited.colors.custom.ten
+text-align: center
+align-self: center
 
 -- end: ftd.row
 
@@ -125,10 +116,13 @@ anchor: parent
 right.px: 24
 right.px if { $ftd.device == "mobile"}: 12
 top.px: 10
+top.percent if { $ftd.device == "mobile"}: 50
 z-index: 9999
+align-self: center
+margin-top.px if { $ftd.device == "mobile"}: -12
 
 -- ftd.image:
-src: $assets.files.static.cross.svg
+src: $assets.files.static.cross.svg.light
 width.fixed.px: 24
 height.fixed.px: 24
 $on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
@@ -138,3 +132,79 @@ $on-click$: $ftd.set-bool($a = $simple-banner.hide, v = true)
 -- end: ftd.column
 
 -- end: simple-banner
+
+
+
+
+
+
+
+
+
+
+-- component cta-banner:
+caption title:
+string cta-text: 
+string cta-link: 
+boolean $hide: false
+boolean $mousein: false
+
+-- ftd.column:
+if: { !$cta-banner.hide }
+width: fill-container
+padding.px: 10
+padding-horizontal.px if { $ftd.device == "mobile"}: 48
+background.solid: $inherited.colors.scrim
+align-content: center
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1024
+
+-- ftd.row:
+spacing.fixed.px: 10
+align-self: center
+
+-- ftd.text: $cta-banner.title
+role: $inherited.types.button-medium
+color: $inherited.colors.info.base.dark
+text-align: center
+align-self: center
+
+-- ftd.text: $cta-banner.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.info.base.dark
+color if { $cta-banner.mousein }: $inherited.colors.info.base.dark
+border-bottom-width.px: 1
+border-color if { $cta-banner.mousein }: $inherited.colors.custom.three
+link: $cta-banner.cta-link
+white-space: nowrap
+$on-mouse-enter$: $ftd.set-bool($a = $cta-banner.mousein, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $cta-banner.mousein, v = false)
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+anchor: parent
+right.px: 24
+right.px if { $ftd.device == "mobile"}: 12
+top.px: 10
+top.percent if { $ftd.device == "mobile"}: 50
+z-index: 9999
+align-self: center
+margin-top.px if { $ftd.device == "mobile"}: -12
+
+-- ftd.image:
+src: $assets.files.static.cross.svg.light
+width.fixed.px: 24
+height.fixed.px: 24
+$on-click$: $ftd.set-bool($a = $cta-banner.hide, v = true)
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: cta-banner
