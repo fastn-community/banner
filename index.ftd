@@ -83,6 +83,7 @@ caption title:
 optional string cta-text: 
 optional string cta-link: 
 boolean $hide: false
+boolean $mousein: false
 
 -- ftd.column:
 if: { !$simple-banner.hide }
@@ -107,8 +108,13 @@ color: $inherited.colors.text
 -- ftd.text: $simple-banner.cta-text
 role: $inherited.types.button-small
 color: $inherited.colors.text
+color if { $simple-banner.mousein }: $inherited.colors.cta-primary.base
+border-bottom-width.px: 1
+border-color if { $simple-banner.mousein }: $inherited.colors.cta-primary.base
 link: $simple-banner.cta-link
 white-space: nowrap
+$on-mouse-enter$: $ftd.set-bool($a = $simple-banner.mousein, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $simple-banner.mousein, v = false)
 
 -- end: ftd.row
 
