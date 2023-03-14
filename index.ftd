@@ -176,14 +176,14 @@ align-self: center
 -- ftd.text:
 text: $cta-banner.body
 role: $inherited.types.button-medium
-color: $inherited.colors.info.base.dark
+color: $inherited.colors.text-strong.dark
 text-align: center
 align-self: center
 
 -- ftd.text: $cta-banner.cta-text
 role: $inherited.types.button-medium
-color: $inherited.colors.info.base.dark
-color if { $cta-banner.mousein }: $inherited.colors.info.base.dark
+color: $inherited.colors.text-strong.dark
+color if { $cta-banner.mousein }: $inherited.colors.text-strong.dark
 border-bottom-width.px: 1
 border-color if { $cta-banner.mousein }: $inherited.colors.custom.three
 link: $cta-banner.cta-link
@@ -208,8 +208,8 @@ align-self: center
 
 -- ftd.text: $cta-banner.cta-text
 role: $inherited.types.button-medium
-color: $inherited.colors.info.base.dark
-color if { $cta-banner.mousein }: $inherited.colors.info.base.dark
+color: $inherited.colors.text-strong.dark
+color if { $cta-banner.mousein }: $inherited.colors.text-strong.dark
 border-bottom-width.px: 1
 border-color if { $cta-banner.mousein }: $inherited.colors.custom.three
 link: $cta-banner.cta-link
@@ -233,7 +233,7 @@ align-self: center
 margin-top.px if { $ftd.device == "mobile"}: -12
 
 -- ftd.image:
-src: $assets.files.static.cross.svg.light
+src: $assets.files.static.cross.svg.dark
 width.fixed.px: 24
 height.fixed.px: 24
 $on-click$: $ftd.set-bool($a = $cta-banner.hide, v = true)
@@ -243,3 +243,81 @@ $on-click$: $ftd.set-bool($a = $cta-banner.hide, v = true)
 -- end: ftd.column
 
 -- end: cta-banner
+
+
+
+
+
+
+
+
+
+
+-- component floating-banner:
+body body:
+string link: 
+boolean $hide: false
+boolean $mousein: false
+boolean $btn-mousein: false
+
+-- ftd.column:
+if: { !$floating-banner.hide }
+width: fill-container
+anchor: window
+bottom.em: 2
+left.px: 0
+right.px: 0
+
+
+-- ftd.column:
+align-self: center
+
+
+-- ftd.row:
+
+-- ftd.row:
+background.solid: $inherited.colors.custom.seven
+background.solid if { $floating-banner.mousein }: $inherited.colors.custom.four
+$on-mouse-enter$: $ftd.set-bool($a = $floating-banner.mousein, v = true )
+$on-mouse-leave$: $ftd.set-bool($a = $floating-banner.mousein, v = false )
+link: $floating-banner.link
+align-content: center
+padding-horizontal.px: 16
+padding-right.px: 4
+padding-vertical.px: 8
+border-top-left-radius.px: 4
+border-bottom-left-radius.px: 4
+
+-- ftd.text:
+text: $floating-banner.body
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong.dark
+
+-- end: ftd.row
+
+-- ftd.row:
+background.solid: $inherited.colors.custom.seven
+background.solid if { $floating-banner.mousein }: $inherited.colors.custom.four
+$on-mouse-enter$: $ftd.set-bool($a = $floating-banner.btn-mousein, v = true )
+$on-mouse-leave$: $ftd.set-bool($a = $floating-banner.btn-mousein, v = false )
+padding-horizontal.px: 8
+padding-vertical.px: 8
+align-self: center 
+border-top-right-radius.px: 4
+border-bottom-right-radius.px: 4
+
+-- ftd.image:
+src: $assets.files.static.cross.svg
+width.fixed.px: 22
+height.fixed.px: 21
+$on-click$: $ftd.set-bool($a = $floating-banner.hide, v = true )
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: floating-banner
