@@ -14,23 +14,28 @@ cta-link: https://fastn.io/blog/web-components/
 
 🚀 Checkout our latest blog post
 
+-- banner.floating-banner: 
+link: https://github.com/fastn-stack/fastn/ 
+
+Star on GitHub ⭐
+
 -- end: ft.page.banner
 
 -- ft.page.body:
 
--- pd.package: CTA Banner
+-- pd.package: floating Banner
 name: fifthtry.github.io/banner
 
-`cta-banner` is another banner component which have `cta-text` and `cta-link` as
-additional(optional) parameters.
+`floating-banner` is another banner component which have `link` as parameter, 
+which will take user to the link value.
 
-Use our `cta-banner` on your fastn web projects where you would like to add click
+Use our `floating-banner` on your fastn web projects where you would like to add click
 to action for your web page users.
 
 🌟 Ex.g. Look at the top of this page.
 
 
-To use cta-banner on your `FTD` web pages, add below `fastn` dependency into `FASTN.ftd` file:
+To use floating-banner on your `FTD` web pages, add below `fastn` dependency into `FASTN.ftd` file:
 
 -- ft.code:
 lang: ftd
@@ -48,19 +53,17 @@ files:
 
 -- cb.rendered.input:
 
-\-- banner.cta-banner: 
-cta-text: Ahoy, Web Components!
-cta-link: https://fastn.io/blog/web-components/
+\-- banner.floating-banner: 
+link: https://github.com/fastn-stack/fastn/ 
 
-🚀 Checkout our latest blog post
+Star on GitHub ⭐
 
 -- cb.rendered.output:
 
--- banner.cta-banner: 
-cta-text: Ahoy, Web Components!
-cta-link: https://fastn.io/blog/web-components/
+-- banner.floating-banner: 
+link: https://github.com/fastn-stack/fastn/ 
 
-🚀 Checkout our latest blog post
+Star on GitHub ⭐
 
 -- end: cb.rendered.output
 
