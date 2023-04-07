@@ -199,10 +199,10 @@ if: {  $ftd.device == "mobile" }
 spacing.fixed.px: 10
 align-self: center
 
--- ftd.text: 
+-- ftd.text:
 text: $cta-banner.body
-role: $inherited.types.copy-regular
-color: $inherited.colors.info.base.dark
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong.dark
 text-align: center
 align-self: center
 
