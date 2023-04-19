@@ -261,23 +261,21 @@ boolean $mousein: false
 boolean $btn-mousein: false
 
 -- ftd.column:
-if: { !$floating-banner.hide }
+if: { !floating-banner.hide }
 width: fill-container
 anchor: window
 bottom.em: 2
 left.px: 0
 right.px: 0
 
-
 -- ftd.column:
 align-self: center
-
 
 -- ftd.row:
 
 -- ftd.row:
 background.solid: $inherited.colors.custom.seven
-background.solid if { $floating-banner.mousein }: $inherited.colors.custom.four
+background.solid if { floating-banner.mousein }: $inherited.colors.custom.three
 $on-mouse-enter$: $ftd.set-bool($a = $floating-banner.mousein, v = true )
 $on-mouse-leave$: $ftd.set-bool($a = $floating-banner.mousein, v = false )
 link: $floating-banner.link
@@ -297,7 +295,7 @@ color: $inherited.colors.text-strong.dark
 
 -- ftd.row:
 background.solid: $inherited.colors.custom.seven
-background.solid if { $floating-banner.mousein }: $inherited.colors.custom.four
+background.solid if { floating-banner.mousein }: $inherited.colors.custom.three
 $on-mouse-enter$: $ftd.set-bool($a = $floating-banner.btn-mousein, v = true )
 $on-mouse-leave$: $ftd.set-bool($a = $floating-banner.btn-mousein, v = false )
 padding-horizontal.px: 8
@@ -307,7 +305,7 @@ border-top-right-radius.px: 4
 border-bottom-right-radius.px: 4
 
 -- ftd.image:
-src: $assets.files.static.cross.svg
+src: $assets.files.static.cross.svg.dark
 width.fixed.px: 22
 height.fixed.px: 21
 $on-click$: $ftd.set-bool($a = $floating-banner.hide, v = true )
