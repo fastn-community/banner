@@ -262,11 +262,9 @@ boolean $btn-mousein: false
 
 -- ftd.column:
 if: { !floating-banner.hide }
-width: fill-container
 anchor: window
 bottom.em: 2
-left.px: 0
-right.px: 0
+align-self: center
 
 -- ftd.column:
 align-self: center

@@ -14,11 +14,6 @@ cta-link: https://fastn.io/blog/web-components/
 
 🚀 Checkout our latest blog post
 
--- banner.floating-banner: 
-link: https://github.com/fastn-stack/fastn/ 
-
-Star on GitHub ⭐
-
 -- end: ft.page.banner
 
 -- ft.page.body:
