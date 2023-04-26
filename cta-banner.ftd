@@ -2,7 +2,6 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/banner
 
-
 -- ft.page: Banner Components
 show-banner: true
 
@@ -24,13 +23,13 @@ name: fifthtry.github.io/banner
 `cta-banner` is another banner component which have `cta-text` and `cta-link` as
 additional(optional) parameters.
 
-Use our `cta-banner` on your fastn web projects where you would like to add click
-to action for your web page users.
+Use our `cta-banner` on your fastn web projects where you would like to add
+click to action for your web page users.
 
 🌟 Ex.g. Look at the top of this page.
 
-
-To use cta-banner on your `FTD` web pages, add below `fastn` dependency into `FASTN.ftd` file:
+To use cta-banner on your `FTD` web pages, add below `fastn` dependency into
+`FASTN.ftd` file:
 
 -- ft.code:
 lang: ftd
@@ -38,11 +37,10 @@ lang: ftd
 \-- fastn.dependency: fifthtry.github.io/banner
 \-- fastn.auto-import: fifthtry.github.io/banner
 
-
 -- tf.markdown:
 
-Once you add above lines into your `fastn` package, add `banner` into your `.ftd` 
-files:
+Once you add above lines into your `fastn` package, add `banner` into your
+`.ftd` files:
 
 -- cb.rendered:
 
