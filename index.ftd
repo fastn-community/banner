@@ -88,17 +88,24 @@ boolean $mousein: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- banner-desktop:
-if: { ftd.device != "mobile" }
 body: $banner.body
 $hide: $banner.hide
 $mousein: $banner.mousein
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- banner-mobile:
-if: { ftd.device == "mobile" }
 body: $banner.body
 $hide: $banner.hide
 $mousein: $banner.mousein
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -244,21 +251,27 @@ boolean $mousein: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- cta-banner-desktop:
-if: { ftd.device != "mobile" }
 body: $cta-banner.body
 cta-text: $cta-banner.cta-text
 cta-link: $cta-banner.cta-link
 $hide: $cta-banner.hide
 $mousein: $cta-banner.mousein
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- cta-banner-mobile:
-if: { ftd.device == "mobile" }
 body: $cta-banner.body
 cta-text: $cta-banner.cta-text
 cta-link: $cta-banner.cta-link
 $hide: $cta-banner.hide
 $mousein: $cta-banner.mousein
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
