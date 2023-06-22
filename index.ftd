@@ -1,4 +1,4 @@
--- import: fifthtry.github.io/banner/assets
+-- import: fastn-community.github.io/banner/assets
 -- import: fifthtry.github.io/package-doc/doc as pd
 
 -- ft.page:
@@ -17,7 +17,7 @@ show-banner: true
 -- ft.page.body:
 
 -- pd.package: Banner components
-name: fifthtry.github.io/banner
+name: fastn-community.github.io/banner
 
 Banners are an important element of website design and can be used to enhance
 the user experience, increase engagement, and drive conversions.
@@ -39,8 +39,8 @@ To use banner on your `FTD` web pages, add below `fastn` dependency into
 -- ft.code:
 lang: ftd
 
-\-- fastn.dependency: fifthtry.github.io/banner
-\-- fastn.auto-import: fifthtry.github.io/banner
+\-- fastn.dependency: fastn-community.github.io/banner
+\-- fastn.auto-import: fastn-community.github.io/banner
 
 -- tf.markdown:
 

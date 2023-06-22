@@ -1,43 +1,43 @@
-# Welcome to your [FASTN site](https://fastn.io/)
+# Banner
 
-FASTN Blank Package Template Repo
+Banner is a temporary notification or message that appears on the screen to provide brief information or alerts to the user. 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fifthtry/fastn-heroku&env[DOWNLOAD_BASE_URL]=https://raw.githubusercontent.com/fifthtry/banner/main/)
-
-
-> 🧑‍🚀 **Seasoned traveler?** update this file. Enjoy!
-
-![doc-site](doc-site-example.png)
+The name "banner" is derived from the concept of a small pop-up message that appears briefly and then fades away, similar to a slice of toast popping up from a toaster.
 
 
-## 🚀 Project Structure
+# Get Rolling
 
-Inside of your FASTN project, you'll see the following folders and files:
+[Click here](https://fastn-community.github.io/banner/) to learn how to use this package.
 
-```
-/
-├── .build/
-│   └── index.html
-├── .packages/
-│   └── fifthtry.github.io/
-│   	└── All downloaded dependencies
-│   	
-├── FASTN.ftd
-├── index.ftd
-└── README.md
-```
+# [Dive into the Docs](https://fastn-community.github.io/banner/)
 
-## 🧞 Commands
+# See it in Action! 
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `fastn build`            | FASTN builder installs all `FASTN` dependencies        |
-| `fastn serve`            | Starts local dev server at available port`localhost:8000`          |
+Explore websites and projects that have utilized this component [here](https://fastn-community.github.io/banner/)
+for inspiration.
 
 
+# [Changelog](Changelog.md)
 
-## 👀 Want to learn more?
+# fastn and Curious?
 
-Feel free to check [our documentation](https://fastn.io/) or jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+Discover more of fastn here.
+
+- [Expander Crash Course](https://fastn.com/expander/)
+- [Video Tutorials](https://fastn.com/expander/hello-world/-/build/)
+- [Explore more Templates/ Components/ Package](https://fastn.com/featured/)
+
+# Become a fastn Contributor
+
+Here's your roadmap:
+
+1.  Finish the [Expander Crash Course](https://fastn.com/expander/)
+2.  Share your progress and ideas on [Discord](https://discord.gg/bucrdvptYd).
+3.  Let our team guide you on your contributor journey.
+
+## Become a fastn-trailblazer
+
+- [Join our Discord Server](https://discord.gg/bucrdvptYd) to connect with other fastn enthusiasts and stay up to date with the latest developments.
+- [Star us on GitHub](https://github.com/fastn-stack/fastn/)
+
+## License - [Open Source BSD](https://github.com/fastn-community/banner/blob/main/LICENSE)
