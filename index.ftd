@@ -371,6 +371,7 @@ boolean $mousein: false
 if: { !cta-banner-mobile.hide }
 width: fill-container
 padding-horizontal.px: 48
+padding-vertical.px: 16
 background.solid: $inherited.colors.scrim
 align-content: center
 
@@ -383,7 +384,7 @@ spacing.fixed.px: 10
 align-self: center
 
 -- ftd.text:
-role: $inherited.types.button-medium
+role: $inherited.types.button-small
 color: $inherited.colors.text-strong.dark
 text-align: center
 align-self: center
@@ -391,7 +392,7 @@ align-self: center
 $cta-banner-mobile.body
 
 -- ftd.text: $cta-banner-mobile.cta-text
-role: $inherited.types.button-medium
+role: $inherited.types.button-small
 color: $inherited.colors.text-strong.dark
 color if { $cta-banner-mobile.mousein }: $inherited.colors.text-strong.dark
 border-bottom-width.px: 1
