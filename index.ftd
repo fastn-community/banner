@@ -247,6 +247,7 @@ string cta-text:
 string cta-link: 
 boolean $hide: false
 boolean $mousein: false
+ftd.color bgcolor: $inherited.colors.scrim
 
 -- ftd.column:
 width: fill-container
@@ -259,6 +260,7 @@ cta-text: $cta-banner.cta-text
 cta-link: $cta-banner.cta-link
 $hide: $cta-banner.hide
 $mousein: $cta-banner.mousein
+bgcolor: $cta-banner.bgcolor
 
 -- end: ftd.desktop
 
@@ -270,6 +272,7 @@ cta-text: $cta-banner.cta-text
 cta-link: $cta-banner.cta-link
 $hide: $cta-banner.hide
 $mousein: $cta-banner.mousein
+bgcolor: $cta-banner.bgcolor
 
 -- end: ftd.mobile
 
@@ -292,12 +295,13 @@ string cta-text:
 string cta-link: 
 boolean $hide: false
 boolean $mousein: false
+ftd.color bgcolor: $inherited.colors.scrim
 
 -- ftd.column:
 if: { !cta-banner-desktop.hide }
 width: fill-container
 padding.px: 10
-background.solid: $inherited.colors.scrim
+background.solid: $cta-banner-desktop.bgcolor
 align-content: center
 
 -- ftd.column:
@@ -366,13 +370,14 @@ string cta-text:
 string cta-link: 
 boolean $hide: false
 boolean $mousein: false
+ftd.color bgcolor: $inherited.colors.scrim
 
 -- ftd.column:
 if: { !cta-banner-mobile.hide }
 width: fill-container
 padding-horizontal.px: 48
 padding-vertical.px: 16
-background.solid: $inherited.colors.scrim
+background.solid: $cta-banner-mobile.bgcolor
 align-content: center
 
 -- ftd.column:
@@ -388,6 +393,7 @@ role: $inherited.types.button-small
 color: $inherited.colors.text-strong.dark
 text-align: center
 align-self: center
+
 
 $cta-banner-mobile.body
 
