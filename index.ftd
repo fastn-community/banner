@@ -242,7 +242,7 @@ $on-click$: $ftd.set-bool($a = $banner-mobile.hide, v = true)
 
 
 -- component cta-banner:
-body body:
+optional body body:
 string cta-text: 
 string cta-link: 
 boolean $hide: false
@@ -290,7 +290,7 @@ bgcolor: $cta-banner.bgcolor
 
 
 -- component cta-banner-desktop:
-body body:
+optional body body:
 string cta-text: 
 string cta-link: 
 boolean $hide: false
@@ -313,6 +313,7 @@ spacing.fixed.px: 10
 align-self: center
 
 -- ftd.text:
+if: { cta-banner-desktop.body != NULL }
 role: $inherited.types.button-medium
 color: $inherited.colors.text-strong.dark
 text-align: center
@@ -365,7 +366,7 @@ $on-click$: $ftd.set-bool($a = $cta-banner-desktop.hide, v = true)
 
 
 -- component cta-banner-mobile:
-body body:
+optional body body:
 string cta-text: 
 string cta-link: 
 boolean $hide: false
@@ -389,11 +390,11 @@ spacing.fixed.px: 10
 align-self: center
 
 -- ftd.text:
+if: { cta-banner-mobile.body != NULL }
 role: $inherited.types.button-small
 color: $inherited.colors.text-strong.dark
 text-align: center
 align-self: center
-
 
 $cta-banner-mobile.body
 
